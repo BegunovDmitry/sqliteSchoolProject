@@ -1,0 +1,180 @@
+:root {
+  font-family: "Commissioner", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "FLAR" 0,
+    "VOLM" 0;
+}
+
+
+body {
+  background: linear-gradient(45deg, #9890e3, #b1f4cf);
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  padding: 20px;
+}
+
+.general {
+  display: grid;
+  grid-template-columns: 35rem 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 90px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup {
+  position: fixed; /* фиксированное положение для попапа */
+  top: 0; /* выравнивание сверху */
+  left: 0; /* выравнивание слева */
+  width: 100%; /* 100% ширины экрана */
+  height: 100%; /* 100% высоты экрана */
+  background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный черный фон */
+  display: flex; /* использование flex для центрирования содержимого */
+  justify-content: center; /* горизонтальное центрирование */
+  align-items: center; /* вертикальное центрирование */
+  z-index: 1000; /* высокая позиция на слое для отображения сверху */
+}
+
+.popup .main {
+  background-color: #bef1d5; /* белый фон попапа */
+  padding: 20px; /* отступы внутри попапа */
+  border-radius: 10px; /* закругленные края */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* тень для попапа */
+  max-width: 500px; /* максимальная ширина */
+  width: 90%; /* ширина, занимаемая попапом, по умолчанию */
+  position: relative;
+}
+
+/* Стиль для кнопки закрытия */
+.close-button {
+  position: absolute; /* абсолютное позиционирование для кнопки */
+  top: 10px; /* отступ сверху */
+  right: 10px; /* отступ справа */
+  background: none; /* убираем фон */
+  border: none; /* убираем рамку */
+  color: red; /* красный цвет текста */
+  font-size: 24px; /* размер шрифта для кнопки */
+  cursor: pointer; /* указатель карты при наведении */
+  padding: 0; /* убираем отступы */
+}
+
+
+.close-button:hover {
+  opacity: 0.7; /* немного прозрачность при наведении */
+}
+
+h1 {
+  margin-top: 20px;
+  color: #5d3f8f; /* Современный цвет для заголовка */
+}
+
+#orderForm {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px; /* Более мягкие углы */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Более глубокая тень */
+  width: 300px;
+  margin-top: 70px;
+}
+
+#orderUnitsForm {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  align-items: end;
+}
+
+label {
+  margin-top: 5px;
+  display: block;
+  font-weight: bold;
+  font-size: large;
+  color: #4a4a4a; /* Тёмно-серый цвет для текста меток */
+}
+
+input[type="text"], input[type="email"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid #4a90e2; /* Современный цвет для границы */
+  border-radius: 5px;
+  background-color: #f0f8ff; /* Светлый цвет для полей ввода */
+  color: #333;
+}
+
+input[type="text"]:focus, input[type="email"]:focus {
+  border-color: #2c3e50; /* Темнейший цвет при фокусе */
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: #2ecc71; /* Яркий зеленый для кнопки */
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #27ae60; /* Темнее при наведении */
+}
+
+h2 {
+  /* margin-top: 40px; */
+  color: #5d3f8f; /* Современный цвет для заголовка второго уровня */
+}
+
+#customerList {
+  max-height: 25rem;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.customer {
+  background-color: #e8f6f3; /* Светло-голубой для контраста */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.customer-info {
+  flex-grow: 1; /* Позволяет этому блоку занимать всё свободное пространство */
+}
+
+.delNum {
+  background-color: #df423d;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delNum:hover {
+  background-color: #9b2e2a; /* Темнее при наведении */
+}
+
+.deleted {
+  display: none;
+}
